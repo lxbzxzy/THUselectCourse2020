@@ -1,0 +1,49 @@
+<view class="page">
+<view class="page__bd">
+
+  <view class="page__hd">
+    <view class="page__title">用户信息管理界面</view>
+    <view class="page__desc">提醒：添加学生：输入学号，班级姓名，系统自动生成初始密码123456；删除学生：输入学号</view>
+  </view>
+
+    <view class="weui-cells__title">请选择模式</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__bd"> 
+          <picker bindchange="bindPickerChange" value="{{idindex}}" range="{{identityarray}}">
+            <view class="weui-select">当前选择：{{identityarray[idindex]}}</view>
+          </picker>
+        </view>
+      </view>
+  </view>
+
+  <view>
+    <view class="weui-cells__title">请输入学号</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <input class="weui-input" type="number" bindinput="input1" placeholder="{{input1}}"/>
+      </view>
+    </view>
+  </view>
+  
+  <view class="weui-cells__title" wx:if="{{idindex==0}}">请输入姓名</view>
+  <view class="weui-cells weui-cells_after-title" wx:if="{{idindex==0}}">
+    <view class="weui-cell">
+      <input placeholder="{{input2}}"class="weui-input" bindinput="input2"/>
+    </view>
+  </view>
+
+  <view class="weui-cells__title" wx:if="{{idindex==0}}">请输入班级</view>
+  <view class="weui-cells weui-cells_after-title" wx:if="{{idindex==0}}">
+    <view class="weui-cell">
+      <input placeholder="{{input3}}"class="weui-input" bindinput="input3"/>
+    </view>
+  </view>
+
+  <view class="btn-area">
+    <button class="button" bindtap="add" wx:if="{{idindex==0}}" type="primary">添加学生</button>
+    <button class="button" bindtap="deleteStudent" wx:if="{{idindex==1}}" type="warn">删除学生</button>
+  </view>
+
+</view>
+</view>

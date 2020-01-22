@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/student/info/index",
+    "pages/teacher/info/index",
+    "pages/student/selectcourse/index",
+    "pages/student/courseinfo/index",
+    "pages/function/password/index",
+    "pages/teacher/time/time",
+    "pages/teacher/addtime/index",
+    "pages/teacher/student/index",
+    "pages/teacher/specialselect/index",
+    "pages/teacher/studentedit/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "选课系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#00e",
+    "list": [
+      {
+        "pagePath": "pages/student/info/index",
+        "text": "用户",
+        "iconPath": "images/game.jpg",
+        "selectedIconPath": "images/gameon.jpg"
+      },
+      {
+        "pagePath": "pages/student/courseinfo/index",
+        "text": "选课",
+        "iconPath": "images/intro.jpg",
+        "selectedIconPath": "images/introon.jpg"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

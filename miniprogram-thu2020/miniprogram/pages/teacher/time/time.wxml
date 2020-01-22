@@ -1,0 +1,61 @@
+<view>
+  <view class="title">开课时间</view>
+  <view class="total" wx:if="{{general}}">
+    <view class="title3">提示：点击时间即可查看这节课报名学生信息</view>
+    <view class="row">
+      <view class="column10">{{dealingItem0.time}}</view>
+      <view class="column2">{{dealingItem0.lecture1}}</view>
+      <view class="column2">{{dealingItem0.lecture2}}</view>
+      <view class="column2">{{dealingItem0.lecture3}}</view>
+      <view class="column2">{{dealingItem0.lecture4}}</view>
+    </view>
+    <view wx:for="{{dealtData}}" wx:key="name">
+      <view class="row">
+        <view class="{{item.style}}" bindtap="lectureDetail" data-index = '{{index}}'>{{item.time}}</view>
+        <view class="full" wx:if="{{item.lecture1=='4/4'}}">{{item.lecture1}}</view>
+        <view class="notfull" wx:if="{{item.lecture1!='4/4'}}">{{item.lecture1}}</view>
+        <view class="full" wx:if="{{item.lecture2=='4/4'}}">{{item.lecture2}}</view>
+        <view class="notfull" wx:if="{{item.lecture2!='4/4'}}">{{item.lecture2}}</view>
+        <view class="full" wx:if="{{item.lecture3=='4/4'}}">{{item.lecture3}}</view>
+        <view class="notfull" wx:if="{{item.lecture3!='4/4'}}">{{item.lecture3}}</view>
+        <view class="full" wx:if="{{item.lecture4=='4/4'}}">{{item.lecture4}}</view>
+        <view class="notfull" wx:if="{{item.lecture4!='4/4'}}">{{item.lecture4}}</view>
+      </view>
+    </view>
+  </view>
+  <button class="button" type="primary" bindtap="addCourse" wx:if="{{general}}" >添加时间</button>
+  <view wx:if="{{!general}}">
+    <view class="title2">{{nowSelect}}</view>
+    <view class="title3">实验一选课</view>
+    <view class="total">
+    <view wx:for="{{classmateLecture1}}" wx:key="lec" class="row">
+      <view class="studentId">学号：{{item.studentId}}</view>
+      <view class="studentName">姓名：{{item.studentName}}</view>
+    </view>
+    </view>
+    <view class="title3">实验二选课</view>
+    <view class="total">
+    <view wx:for="{{classmateLecture2}}" wx:key="lec" class="row">
+      <view class="studentId">学号：{{item.studentId}}</view>
+      <view class="studentName">姓名：{{item.studentName}}</view>
+    </view>
+    </view>
+    <view class="title3">实验三选课</view>
+    <view class="total">
+    <view wx:for="{{classmateLecture3}}" wx:key="lec" class="row">
+      <view class="studentId">学号：{{item.studentId}}</view>
+      <view class="studentName">姓名：{{item.studentName}}</view>
+    </view>
+    </view>
+    <view class="title3">实验四选课</view>
+    <view class="total">
+    <view wx:for="{{classmateLecture4}}" wx:key="lec" class="row">
+      <view class="studentId">学号：{{item.studentId}}</view>
+      <view class="studentName">姓名：{{item.studentName}}</view>
+    </view>
+    </view>
+    <button class="button" type="primary" bindtap="returnGeneral" wx:if="{{!general}}" >返回</button>
+    <button class="button" bindtap="deleteLecture" wx:if="{{!general}}" type="warn">删除课程</button>
+  </view>
+  
+</view>

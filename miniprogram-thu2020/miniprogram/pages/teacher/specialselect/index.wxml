@@ -1,0 +1,42 @@
+<view class="page">
+<view class="page__bd">
+
+  <view class="page__hd">
+    <view class="page__title">手动选课退课界面</view>
+    <view class="page__desc">提醒：选课时请输入学生学号，选择所报课程，并输入课程号；退课时请输入学生学号并选择所报课程</view>
+  </view>
+
+    <view>
+    <view class="weui-cells__title">请输入学号</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <input class="weui-input" type="number" bindinput="input1" placeholder="{{input1}}"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">请选择课程</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__bd"> 
+          <picker bindchange="bindPickerChange" value="{{idindex}}" range="{{identityarray}}">
+            <view class="weui-select">当前选择：{{identityarray[idindex]}}</view>
+          </picker>
+        </view>
+      </view>
+  </view>
+  
+  <view class="weui-cells__title" wx:if="{{mode=='select'}}">请输入课程号（课程号由三位或四位数字组成，其中最后一位为1时代表上午，为2时代表下午，为3时代表晚上；倒数第二位表示星期几；百分位代表第几周。如1061代表第10周周六上午，942代表第九周周四下午）</view>
+  <view class="weui-cells weui-cells_after-title" wx:if="{{mode=='select'}}">
+    <view class="weui-cell">
+      <input placeholder="{{input3}}"class="weui-input" type="number" bindinput="input2"/>
+    </view>
+  </view>
+
+  <view class="btn-area">
+    <button class="button" bindtap="select" wx:if="{{mode=='select'}}" type="primary">手动选课</button>
+    <button class="button" bindtap="quit" wx:if="{{mode=='quit'}}" type="primary">手动退课</button>
+  </view>
+
+</view>
+</view>

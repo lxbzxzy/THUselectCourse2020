@@ -1,0 +1,50 @@
+<view>
+  <view class="title">学生信息</view>
+  <view class="total" wx:if="{{general}}">
+    <view class="title3">提示：数字代表学生所选的课程号，1234分别表示实验一二三四的选课情况，点击学号查看学生详细信息</view>
+    <button class="button" bindtap="select" wx:if="{{selected}}">只显示未完成选课学生</button>
+    <button class="button" bindtap="notselect" wx:if="{{!selected}}">显示所有学生</button>
+    <view class="row">
+      <view class="column10">{{student0.studentId}}</view>
+      <view class="column11">{{student0.studentName}}</view>
+      <view class="column2">{{student0.lecture1}}</view>
+      <view class="column2">{{student0.lecture2}}</view>
+      <view class="column2">{{student0.lecture3}}</view>
+      <view class="column2">{{student0.lecture4}}</view>
+    </view>
+    <view wx:for="{{studentInfo}}" wx:key="name">
+      <view class="row" wx:if="{{selected||(item.lecture1==null||item.lecture2==null||item.lecture3==null)||item.lecture4==null}}">
+        <view class="style" bindtap="studentDetail" data-index = '{{index}}'>{{item.studentId}}</view>
+        <view class="style2" bindtap="studentDetail" data-index = '{{index}}'>{{item.studentName}}</view>
+        <view class="full" wx:if="{{item.lecture1==null}}">未选</view>
+        <view class="notfull" wx:if="{{item.lecture1!=null}}">{{item.lecture1}}</view>
+        <view class="full" wx:if="{{item.lecture2==null}}">未选</view>
+        <view class="notfull" wx:if="{{item.lecture2!=null}}">{{item.lecture2}}</view>
+        <view class="full" wx:if="{{item.lecture3==null}}">未选</view>
+        <view class="notfull" wx:if="{{item.lecture3!=null}}">{{item.lecture3}}</view>
+        <view class="full" wx:if="{{item.lecture4==null}}">未选</view>
+        <view class="notfull" wx:if="{{item.lecture4!=null}}">{{item.lecture4}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="total" wx:if="{{!general}}">
+    <button class="button" bindtap="returnGeneral">返回</button>
+    <view class="title3">学号：{{detailStudent.studentId}}  姓名：{{detailStudent.studentName}}</view>
+    <view class="row">
+      <view class="column10">实验一选课</view>
+      <view class="style3">{{detailStudent.lecture1}}</view>
+    </view>
+    <view class="row">
+      <view class="column10">实验二选课</view>
+      <view class="style3">{{detailStudent.lecture2}}</view>
+    </view>
+    <view class="row">
+      <view class="column10">实验三选课</view>
+      <view class="style3">{{detailStudent.lecture3}}</view>
+    </view>
+    <view class="row">
+      <view class="column10">实验四选课</view>
+      <view class="style3">{{detailStudent.lecture4}}</view>
+    </view>
+  </view>
+</view>

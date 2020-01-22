@@ -1,0 +1,48 @@
+<view>
+  <view class="title">个人信息</view>
+  <view class="card">
+    <view class="cardleft">
+      <view class="infoword">学号：{{basicInfo.studentId}}</view>
+      <view class="infoword">姓名：{{basicInfo.studentName}}</view>
+      <view class="infoword">班级：{{basicInfo.className}}</view>
+      <view class="updatePassword" bindtap="updatePassword">修改密码</view>
+    </view>
+    <view class="avatar">
+      <open-data type="userAvatarUrl" ></open-data>
+    </view>
+  </view>
+  <button bindtap="quit" class="button">退出登录</button>
+  
+  <view class="title">我的课程</view>
+
+  <view class="singleLecture">
+    <text wx:if="{{basicInfo.lecture1==null}}" class="notSelected">实验一：未选</text>
+    <button type="primary" size="mini" wx:if="{{basicInfo.lecture1==null}}" bindtap="selectLecture1">点击进入选课</button>
+    <text wx:if="{{basicInfo.lecture1!=null}}" class="selected">实验一：{{time1}}</text>
+    <button type="default" size="mini" wx:if="{{basicInfo.lecture1!=null}}" bindtap="gradeLecture1">点击查看成绩</button>
+
+  </view>
+  <view class="singleLecture">
+    <text wx:if="{{basicInfo.lecture2==null}}" class="notSelected">实验二：未选</text>
+    <button type="primary" size="mini" wx:if="{{basicInfo.lecture2==null}}" bindtap="selectLecture2">点击进入选课</button>
+    <text wx:if="{{basicInfo.lecture2!=null}}" class="selected">实验二：{{time2}}</text>
+    <button type="default" size="mini" wx:if="{{basicInfo.lecture2!=null}}" bindtap="gradeLecture2">点击查看成绩</button>
+  </view>
+
+  <view class="singleLecture">
+    <text wx:if="{{basicInfo.lecture3==null}}" class="notSelected">实验三：未选</text>
+    <button type="primary" size="mini" wx:if="{{basicInfo.lecture3==null}}" bindtap="selectLecture3">点击进入选课</button>
+    <text wx:if="{{basicInfo.lecture3!=null}}" class="selected">实验三：{{time3}}</text>
+    <button type="default" size="mini" wx:if="{{basicInfo.lecture3!=null}}" bindtap="gradeLecture3">点击查看成绩</button>
+  </view>
+
+  <view class="singleLecture">
+    <text wx:if="{{basicInfo.lecture4==null}}" class="notSelected">实验四：未选</text>
+    <button type="primary" size="mini" wx:if="{{basicInfo.lecture4==null}}" bindtap="selectLecture4">点击进入选课</button>
+    <text wx:if="{{basicInfo.lecture4!=null}}" class="selected">实验四：{{time4}}</text>
+    <button type="default" size="mini" wx:if="{{basicInfo.lecture4!=null}}" bindtap="gradeLecture4">点击查看成绩</button>
+  </view>
+
+  <view class="title">选课须知</view>
+  <view style="margin:30rpx">今天是第{{week}}周星期{{dayShow}}，请在本学期结束之前完成选课</view>
+</view>

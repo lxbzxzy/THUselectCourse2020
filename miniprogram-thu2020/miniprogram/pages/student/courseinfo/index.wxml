@@ -1,0 +1,21 @@
+<view>
+  <view class="title">选课须知</view>
+  <view style="margin:30rpx">今天是第{{week}}周星期{{dayShow}}，请在本学期结束之前完成选课</view>
+  
+  <view wx:for="{{lectureBasic}}" wx:key="name" class="bill">
+    <view class="total">  
+      <view class="billinfo">
+        <view class="detailinfo">{{item.name}}</view>
+        <view class="detailinfo">地点：{{item.locate}}</view>
+        <view class="notSelected" wx:if="{{!item.done}}">未选</view>
+        <view class="selected" wx:if="{{item.done}}">已选</view>
+      </view>
+      <view class="billedit">
+        <view bindtap="selectPage" wx:if="{{!item.done}}" data-index = '{{index}}' class="edit">进入选课</view>
+        <view bindtap="selectPage" wx:if="{{item.done}}" data-index = '{{index}}' class="edit">查看时间</view>
+        <view bindtap="dropCourse" wx:if="{{item.done}}" data-index = '{{index}}' class="edit">退课</view>
+      </view>
+    </view>
+  </view>
+
+</view>

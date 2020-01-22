@@ -1,0 +1,25 @@
+@import './style/weui.wxss';
+
+/**app.wxss**/
+.intro {
+  font-size:30rpx;
+  margin: 30px;
+  text-align: center;
+}
+
+.input{
+  background-color:snow;
+  margin:30rpx;
+}
+
+.button{
+  margin:30rpx;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+

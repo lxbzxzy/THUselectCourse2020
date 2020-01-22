@@ -1,0 +1,110 @@
+.title{
+  text-align: center;
+  margin:40rpx;
+  font-weight:bold;
+}
+
+.button{
+  margin-left:50rpx;
+  margin-right:50rpx;
+  margin-top:30rpx;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.row2{
+  display: flex;
+  flex-direction: row;
+  margin:30rpx;
+  border:4rpx solid #f5f5f5;
+  border-radius: 5%;
+}
+
+.total{
+  margin:30rpx;
+  border:4rpx solid #f5f5f5;
+  border-radius: 5%;
+}
+
+.style{
+  width:260rpx;
+  text-align: center;
+  text-decoration: underline;
+}
+.style3{
+  width:260rpx;
+  text-align: center;
+}
+.style2{
+  width:120rpx;
+  text-align: center;
+  font-size:30rpx;
+}
+
+.column10{
+  height:60rpx;
+  width:260rpx;
+  font-weight: bold;
+  color: rgb(67, 6, 77);
+  text-align: center
+}
+.column11{
+  height:80rpx;
+  width:120rpx;
+  font-weight: bold;
+  color: rgb(67, 6, 77);
+  text-align: center
+}
+
+.full{
+  width:80rpx;
+  color: rgb(139,0,18);
+  text-align: center
+}
+
+.notfull{
+  width:80rpx;
+  color: #0066cc;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.column2{
+  width:80rpx;
+  height:60rpx;
+  font-weight:bold;
+  color: rgb(67, 6, 77);
+  text-align: center
+}
+
+.button{
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+  margin-left:50rpx;
+  margin-right:50rpx;
+}
+
+.title2{
+  margin-left:30rpx;
+  font-size:40rpx;
+  font-weight:bold;
+  color:rgb(102,8,116);
+}
+
+.title3{
+  margin-left:30rpx;
+  font-size: 35rpx;
+  font-weight: bold
+}
+
+.studentId{
+  font-size:30rpx;
+  width:300rpx;
+}
+
+.studentName{
+  font-size:30rpx;
+}

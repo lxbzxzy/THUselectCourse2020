@@ -1,0 +1,8 @@
+<view>
+  <view class="input1">修改密码</view>
+  <input class="input" placeholder="请输入原密码" bindinput="input1"/>
+  <input class="input" placeholder="请输入新密码" bindinput="input2"/>
+  <input class="input" placeholder="请再次确认新密码" bindinput="input3"/>
+  <button class="button" bindtap="changePassword" type="primary">修改密码</button>
+  <button class="button" bindtap="quit">退出</button>
+</view>

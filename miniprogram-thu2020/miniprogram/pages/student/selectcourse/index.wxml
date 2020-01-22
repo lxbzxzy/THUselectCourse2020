@@ -1,0 +1,32 @@
+<view>
+  <view class="title">{{lectureCode}}</view>
+
+  <view class="weui-cells__title">请选择周次</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__bd"> 
+          <picker bindchange="bindPickerChange" value="{{idindex}}" range="{{identityarray}}">
+            <view class="weui-select">当前选择：{{identityarray[idindex]}}</view>
+          </picker>
+        </view>
+      </view>
+  </view>
+
+  <view wx:for="{{dealtData}}" wx:key="id">
+    <view class="bill" wx:if="{{item.week==identity1||identity1=='all'}}">
+    <view class="total" wx:if="{{!item.pastTime&&(item.week==identity1||identity1=='all')}}">  
+      <view class="billinfo">
+        <view class="detailinfo">{{item.time}}</view>
+        <view class="detailinfo">已选人数：{{item.selected}}/{{item.volume}}</view>
+        <view class="selected" wx:if="{{nowState==null&&!item.timeUnavailable&&item.selected<item.volume}}">可选</view>
+        <view class="notSelected" wx:if="{{(nowState!=null&&item.id!=nowState)||(item.timeUnavailable&&item.id!=nowState)||(item.selected>=item.volume&&nowState!=item.id)}}">不可选</view>
+        <view class="selected" wx:if="{{nowState==item.id}}">已选</view>
+      </view>
+      <view class="billedit">
+        <view bindtap="selectLecture" wx:if="{{nowState==null&&!item.timeUnavailable&&item.selected<item.volume}}" data-index = '{{index}}' class="edit">选课</view>
+        <view bindtap="dropLecture" wx:if="{{item.id==nowState}}" data-index = '{{index}}' class="edit">退课</view>
+      </view>
+    </view>
+    </view>
+  </view>
+</view>

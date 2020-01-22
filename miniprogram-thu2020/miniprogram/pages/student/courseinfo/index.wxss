@@ -1,0 +1,49 @@
+.title{
+  text-align: center;
+  margin:40rpx;
+  font-weight:bold;
+}
+
+.edit{
+  color:#0066cc;
+  font-size:35rpx;
+  text-decoration:underline;
+}
+
+.total{
+  display: flex;
+  flex-direction: row;
+}
+
+.billinfo{
+  width:450rpx;
+}
+
+.bill{
+  margin:35rpx;
+  border:4rpx solid #f5f5f5;
+  border-radius: 5%;
+}
+
+.detailinfo{
+  font-weight: bold;
+  font-size:30rpx;
+  margin-left:30rpx;
+}
+
+.notSelected{
+  margin-left:30rpx;
+  color: rgb(139,0,18);
+  font-weight: bold;
+}
+
+.selected{
+  margin-left:30rpx;
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.billedit{
+  width:200rpx;
+  right:20rpx;
+}

@@ -1,0 +1,21 @@
+<view>  
+  <view class='title'>教师页面</view>
+  <view class="card">
+    <view class="cardleft">
+      <view class="infoWord">{{basicInfo.teacherName}}</view>
+      <view class="infoWord2">\t\t教师页面可以查看和更改开课时间、查看学生选课情况和手动选课</view>
+      <view class="updatePassword" bindtap="updatePassword">修改密码</view>
+    </view>
+    <view class="avatar">
+      <open-data type="userAvatarUrl" ></open-data>
+    </view>
+  </view>
+  <button bindtap="quit" class="button2">退出登录</button>
+
+  <button class='button' bindtap="time" type="primary">开课时间</button>
+  <button class='button' bindtap="studentBasic" type="primary">学生信息</button>
+  <button class='button' bindtap="specialSelect" type="primary">手动选课</button>
+  <button class='button' bindtap="specialQuit" type="primary">手动退课</button>
+  <button class='button' bindtap="studentEdit" type="primary">学生管理</button>
+
+</view>
